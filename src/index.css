@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0a0a0a;
+    --surface: #121212;
+    --surface-hover: #181818;
+    --surface-border: rgba(212, 175, 55, 0.18);
+    --gold: #d4af37;
+    --gold-light: #f3e5ab;
+    --gold-dark: #997a15;
+    --gold-glow: rgba(212, 175, 55, 0.25);
+    --text: #f4efe6;
+    --text-muted: #a39e93;
+    --text-subtle: #736f66;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Subtle Film Grain Texture */
+@media (prefers-reduced-motion: no-preference) {
+  .film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Gold Gradient Hairlines & Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f9f5e8 0%, #d4af37 50%, #aa820a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to right, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.4), rgba(212, 175, 55, 0.1)) 1;
+}
+
+/* Smooth Focus Ring */
+*:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}

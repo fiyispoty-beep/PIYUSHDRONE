@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+
+# Note: Keep Disallow active while in demonstration mode.
+# When ready for production launch with real client content,
+# set Disallow: none or Allow: / in site.config.ts and robots.txt.
+Sitemap: https://piyushbhendarkar.example.com/sitemap.xml
